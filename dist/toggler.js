@@ -39,7 +39,7 @@
                                     _self.initGroup(toggler);
                                 }
                                 var toggledEvent = document.createEvent('Event');
-                                toggledEvent.initEvent('es:toggled', true, true);
+                                toggledEvent.initEvent('toggler:toggled', true, true);
                                 window.dispatchEvent(toggledEvent);
                             }
                             event.preventDefault();
@@ -148,9 +148,9 @@
                 items[i].classList.toggle(cssClass);
                 var toggledEvent = document.createEvent('Event');
                 if (_self.isActive(items[i])) {
-                    toggledEvent.initEvent('es:toggled:on', true, true);
+                    toggledEvent.initEvent('toggler:toggled:on', true, true);
                 } else {
-                    toggledEvent.initEvent('es:toggled:off', true, true);
+                    toggledEvent.initEvent('toggler:toggled:off', true, true);
                 }
                 items[i].dispatchEvent(toggledEvent);
             }
