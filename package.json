@@ -1,0 +1,32 @@
+{
+  "name": "toggler",
+  "version": "1.0.0",
+  "description": "Script for CSS class toggling",
+  "main": "dist/toggler.js",
+  "scripts": {
+    "test": "gulp lint",
+    "js": "gulp js",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vyvrhel/toggler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vyvrhel/toggler/issues"
+  },
+  "homepage": "https://github.com/vyvrhel/toggler#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}

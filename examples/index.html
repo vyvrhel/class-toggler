@@ -1,0 +1,73 @@
+<html>
+<head>
+  <style>
+body {
+  color: #333;
+  font-family: Arial, serif;
+  line-height: 1.5;
+  padding: 1rem;
+  background: #eee;
+}
+h1 {
+  margin: 0 0 0.5em;
+}
+p {
+  margin: 0 0 1.5em;
+}
+.Text {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  box-shadow: 0 0 1.5rem #ccc;
+  background: #fff;
+}
+.Text > *:last-child {
+  margin-bottom: 0;
+}
+.Text__content {
+  max-height: 90rem;
+  margin-bottom: 1.5rem;
+  transition: max-height 0.25s ease-in;
+}
+.Text__content > *:last-child {
+  margin-bottom: 0;
+}
+.Text__content--hidden-toggle {
+  max-height: 6rem;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
+}
+.Text__toggler-row {
+  text-align: right;
+}
+.Button:not(.Button--active-toggle) .Button__text--less,
+.Button--active-toggle .Button__text--more {
+  display: none;
+}
+</style>
+<script defer src="../src/js/toggler.js"></script>
+</head>
+<body>
+  <div class="Text">
+    <h1 class="Text__title">Lorem ipsum dolor sit amet</h1>
+    <div
+        class="Text__content Text__content--hidden-toggle"
+        data-toggle-name="text"
+        data-toggle-root="Text__content"
+    >
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+        <p>Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+    </div>
+    <p class="Text__toggler-row">
+        <button
+            class="Text__toggler Button"
+            data-toggle-target="text"
+            data-toggle-root="Button"
+        >
+            <span class="Button__text Button__text--more">Show more &darr;</span>
+            <span class="Button__text Button__text--less">Show less &uarr;</span>
+        </button>
+    </p>
+</div>
+</body>
+</html>
