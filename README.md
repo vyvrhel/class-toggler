@@ -1,5 +1,5 @@
 # Class Toggler
-Simple javascript library for **switching element's CSS class** by clicking another element. Switching is controlled via *data-attributes*. Suitable for creating simply *show/hide*, *more/less*, *tabs*, *dropdown* or *modal* components without writing (repetitive) javascript code, all is done in HTML template. Component visual behaviour is controlled by your stylesheets.
+Simple javascript library for **switching element's CSS class** by clicking another element. Switching is controlled via *data-attributes*. Suitable for creating simply *show/hide*, *more/less*, *tabs*, *dropdown* or *modal* components without writing (repetitive) javascript code, all is done within your HTML template. Component visual behaviour is controlled by your stylesheets.
 
 ## Basic usage
 When toggling there are two types of HTML elements:
@@ -41,6 +41,6 @@ Reveals text and make the button green when you click on it:
 
 <!-- Toggle button -->
 <button data-toggle-target="toggle-name">
-  Toggle content!
+  Toggle text!
 </button>
 ```
