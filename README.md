@@ -46,12 +46,12 @@ Reveals text and make the button green when you click on it:
 ```
 
 ## Options / Data attributtes
-Behaviour of each toggle element can be set via these *data attributes*:
+Behaviour of each toggle can be set via these *data attributes*:
 
 ### Toggle button
 
 #### `data-toggle-target="name"`
-Targets related content(s) that has set `data-toggle-name="name"`.
+Targets related content(s) that has `data-toggle-name="name"`.
 
 #### `data-toggle-abort="event-1 event-2"`
 Turns on automatic hiding of toggle for these possible events/values:
