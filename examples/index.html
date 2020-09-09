@@ -45,7 +45,10 @@ p {
   display: none;
 }
 </style>
-<script defer src="../src/js/toggler.js"></script>
+<script defer src="../dist/class-toggler.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => classToggler.init());
+</script>
 </head>
 <body>
   <div class="Text">
@@ -53,7 +56,7 @@ p {
     <div
         class="Text__content Text__content--hidden-toggle"
         data-toggle-name="text"
-        data-toggle-root="Text__content"
+        data-toggle-class="Text__content--hidden-toggle"
     >
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
         <p>Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
@@ -62,7 +65,7 @@ p {
         <button
             class="Text__toggler Button"
             data-toggle-target="text"
-            data-toggle-root="Button"
+            data-toggle-class="Button--active-toggle"
         >
             <span class="Button__text Button__text--more">Show more &darr;</span>
             <span class="Button__text Button__text--less">Show less &uarr;</span>

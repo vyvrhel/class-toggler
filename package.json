@@ -1,8 +1,8 @@
 {
-  "name": "toggler",
+  "name": "class-toggler",
   "version": "1.0.0",
   "description": "Script for CSS class toggling",
-  "main": "dist/toggler.js",
+  "main": "dist/class-toggler.js",
   "scripts": {
     "test": "gulp lint",
     "js": "gulp js",

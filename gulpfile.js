@@ -6,12 +6,12 @@ const babel = require('gulp-babel');
 
 function js() {
   return gulp.src('src/js/**/*.js')
+    .pipe(gulp.dest('dist'))
     .pipe(babel({
       presets: ['@babel/env', {
         sourceType: 'unambiguous',
       }],
     }))
-    .pipe(gulp.dest('dist'))
     .pipe(uglify())
     .pipe(rename((pathParam) => {
       const path = pathParam;
