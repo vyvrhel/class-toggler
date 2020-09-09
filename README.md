@@ -1,33 +1,46 @@
 # Class Toggler
-Simple javascript library for **switching element's CSS class** by clicking another element. Switching is controlled via *data-attributes*. Suitable for creating simply *show/hide*, *more/less*, *tabs*, *dropdown* or *modal* components without writing (repetitive) javascript code. Component visual behaviour is controlled by your stylesheets.
+Simple javascript library for **switching element's CSS class** by clicking another element. Switching is controlled via *data-attributes*. Suitable for creating simply *show/hide*, *more/less*, *tabs*, *dropdown* or *modal* components without writing (repetitive) javascript code, all is done in HTML template. Component visual behaviour is controlled by your stylesheets.
 
 ## Basic usage
-Reveal text and hide the button when you click on it:
-```html
-<script src="toggler.min.js"></script>
+When toggling there are two types of HTML elements:
 
+### Toggle Button
+- Show/hides related content when clicked.
+- Related content(s) is defined by `data-toggle-target` HTML attribut value.
+- Active state is identified by customizable CSS class (default `-active-toggle`).
+### Toggle Content
+- Element to be shown/hidden when related button is clicked.
+- Related button(s) is defined by `data-toggle-name` HTML attribut value.
+- Hidden state is identified by customizable CSS class (default `-hidden-toggle`).
+
+### Basic example
+Reveals text and make the button green when you click on it:
+```html
+<!-- Linking Class Toggler -->
+<script src="class-toggler.min.js"></script>
+
+<!-- Initialization of Class Toggler -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => classToggler.init());
+</script>
+
+<!-- Styles for hidden content and active button -->
 <style>
-  .module__text--hidden-toggle {
-    display: none;
+  .-active-toggle {
+    color: green;
   }
-  .module__button--active-toggle {
+  .-hidden-toggle {
     display: none;
   }
 </style>
 
-<div class="module">
-
-  <p
-    class="module__text module__text--hidden-toggle"
-    data-toggle-name="toggling-text"
-    data-toggle-class="module__text--hidden-toggle"
-  >Content to show</p>
-
-  <button
-    class="module__button"
-    data-toggle-target="toggling-text"
-    data-toggle-class="module__button--active-toggle"
-  >Show content!</button>
-  
+<!-- Toggle content -->
+<div class="-hidden-toggle" data-toggle-name="toggle-name">
+  <p>Text to be toggled.</p>
 </div>
+
+<!-- Toggle button -->
+<button data-toggle-target="toggle-name">
+  Toggle content!
+</button>
 ```
