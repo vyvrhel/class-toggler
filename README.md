@@ -1,7 +1,7 @@
 # Class Toggler
 Simple javascript library for **switching element's CSS class** by clicking another element. Switching is controlled via *data-attributes*. Suitable for creating simply *show/hide*, *more/less*, *tabs*, *dropdown* or *modal* components without writing (repetitive) javascript code, all is done within your HTML template. Component visual behaviour is controlled by your stylesheets.
 
-## Basic usage
+## Basic Usage
 When toggling there are two types of HTML elements:
 
 ### Toggle Button
@@ -13,7 +13,7 @@ When toggling there are two types of HTML elements:
 - Related button(s) is defined by `data-toggle-name` HTML attribut value.
 - **Hidden state** is identified by customizable CSS class (default `-hidden-toggle`).
 
-### Basic example
+### Basic Example
 Reveals text and make the button green when you click on it:
 ```html
 <!-- Linking Class Toggler -->
@@ -45,10 +45,10 @@ Reveals text and make the button green when you click on it:
 </button>
 ```
 
-## Options / Data attributtes
+## Options / Data Attributtes
 Behaviour of each toggle can be set via these *data attributes*:
 
-### Toggle button
+### Toggle Button
 
 #### `data-toggle-target="name"`
 Targets related content(s) that has `data-toggle-name="name"`.
