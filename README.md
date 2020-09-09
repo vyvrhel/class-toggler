@@ -44,3 +44,23 @@ Reveals text and make the button green when you click on it:
   Toggle text!
 </button>
 ```
+
+## Options
+Behaviour of each toggle pair can be set via these *data attributes*:
+
+### Toggle button
+
+#### `data-toggle-target="name"`
+Targets related content(s) that has set `data-toggle-name="name"`.
+
+#### `data-toggle-abort="event-1 event-2"`
+Turns on automatic hiding of toggle for these possible events/values:
+- *escape* - Hide when escape key is pressed.
+- *clickout* - Hide when clicking outside the toggle content.
+
+#### `data-toggle-group="group-name"`
+Each group (togglers with the same *group-name*) can have only one active toggler (turning one toggler on will turn off the rest of togglers in group).
+
+#### `data-toggle-tabs="tabs-name"`
+Each tabs group (togglers with the same *tabs-name*) has always just one active toggler (turning one toggler on will turn off the rest of togglers in tabs; active toggler can't be turned off by clicking it).
+
