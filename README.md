@@ -5,13 +5,13 @@ Simple javascript library for **switching element's CSS class** by clicking anot
 When toggling there are two types of HTML elements:
 
 ### Toggle Button
-- Show/hides related content when clicked.
+- Show/hides related content(s) when clicked.
 - Related content(s) is defined by `data-toggle-target` HTML attribut value.
-- Active state is identified by customizable CSS class (default `-active-toggle`).
+- **Active state** is identified by customizable CSS class (default `-active-toggle`).
 ### Toggle Content
-- Element to be shown/hidden when related button is clicked.
+- Element to be shown/hidden when related button(s) is clicked.
 - Related button(s) is defined by `data-toggle-name` HTML attribut value.
-- Hidden state is identified by customizable CSS class (default `-hidden-toggle`).
+- **Hidden state** is identified by customizable CSS class (default `-hidden-toggle`).
 
 ### Basic example
 Reveals text and make the button green when you click on it:
