@@ -45,8 +45,8 @@ Reveals text and make the button green when you click on it:
 </button>
 ```
 
-## Options
-Behaviour of each toggle pair can be set via these *data attributes*:
+## Options / Data attributtes
+Behaviour of each toggle element can be set via these *data attributes*:
 
 ### Toggle button
 
@@ -59,8 +59,8 @@ Turns on automatic hiding of toggle for these possible events/values:
 - *clickout* - Hide when clicking outside the toggle content.
 
 #### `data-toggle-group="group-name"`
-Each group (togglers with the same *group-name*) can have only one active toggler (turning one toggler on will turn off the rest of togglers in group).
+Each group (togglers with the same *group-name*) can have maximum of one active toggler. Turning one toggler on will turn off the rest of togglers in group.
 
 #### `data-toggle-tabs="tabs-name"`
-Each tabs group (togglers with the same *tabs-name*) has always just one active toggler (turning one toggler on will turn off the rest of togglers in tabs; active toggler can't be turned off by clicking it).
+Each tabs group (togglers with the same *tabs-name*) has always just one active toggler. Turning one toggler on will turn off the rest of togglers in tabs, active toggler can't be turned off by clicking it.
 
