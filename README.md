@@ -1,5 +1,5 @@
-# Toggler
-Simple javascript library for **switching element's CSS class** by clicking another element. Switching is controlled via *data-attributes* and is *BEM* friendly. Suitable for creating simply *show/hide*, *more/less*, *tabs*, *dropdown* or *modal* components without writing (repetitive) javascript code. Component behaviour is controlled by your stylesheets.
+# Class Toggler
+Simple javascript library for **switching element's CSS class** by clicking another element. Switching is controlled via *data-attributes*. Suitable for creating simply *show/hide*, *more/less*, *tabs*, *dropdown* or *modal* components without writing (repetitive) javascript code. Component visual behaviour is controlled by your stylesheets.
 
 ## Basic usage
 Reveal text and hide the button when you click on it:
@@ -20,13 +20,13 @@ Reveal text and hide the button when you click on it:
   <p
     class="module__text module__text--hidden-toggle"
     data-toggle-name="toggling-text"
-    data-toggle-root="module__text"
+    data-toggle-class="module__text--hidden-toggle"
   >Content to show</p>
 
   <button
     class="module__button"
     data-toggle-target="toggling-text"
-    data-toggle-root="module__button"
+    data-toggle-class="module__button--active-toggle"
   >Show content!</button>
   
 </div>
