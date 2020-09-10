@@ -7,7 +7,7 @@ Simple javascript library for **switching element's CSS class** by clicking anot
 - [Events](#events)
 - [Configuration](#configuration)
 
-## Basic Usage
+## 📋 Basic Usage
 When toggling there are two types of HTML elements:
 
 ### Toggle Button
@@ -51,7 +51,7 @@ Reveals text and make the button green when you click on it:
 </button>
 ```
 
-## Initialization
+## 🚀 Initialization
 1. Link *Class Toggler* library in your HTML:
 ```html
 <script src="path-to-library/dist/class-toggler.min.js"></script>
@@ -62,7 +62,7 @@ Reveals text and make the button green when you click on it:
 document.addEventListener('DOMContentLoaded', () => classToggler.init());
 ```
 
-## Options / Data Attributtes
+## ⚙ Options / Data Attributtes
 Behaviour of each individual toggle can be set via these *data attributes*:
 
 ### Toggle Button Options
@@ -122,7 +122,7 @@ CSS *class-name* that will be assigned to hidden toggle content (default `-hidde
 #### `data-toggle-focus="css-selector"`
 Element targeted by *css-selector* (e.g. `#form-field`) will be focused when content is shown.
 
-## Events
+## 👂 Events
 
 #### `ct.button.on`
 Fired at toggle button after it is turned on.
@@ -167,7 +167,7 @@ Fired at document when any toggle button is clicked.
 document.addEventListener('ct.toggled', () => console.log('Toggle button click!'));
 ````
 
-## Configuration
+## 🛠 Configuration
 *Class Toggler* can be initialized with these options:
 - `classActive` - CSS class for active toggle button (default `-active-toggle`)
 - `classHidden` - CSS class for hidden toggle content (default `-hidden-toggle`)
