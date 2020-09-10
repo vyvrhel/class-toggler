@@ -110,17 +110,33 @@ Element targeted by *css-selector* (e.g. `#form-field`) will be focused when con
 #### `ct.button.on`
 Fired at toggle button after it is turned on.
 
+````js
+document.querySelector('#button').addEventListener('ct.button.on', () => console.log('Button turned on!'));
+````
+
 ---
 
 #### `ct.button.off`
 Fired at toggle button after it is turned off.
+
+````js
+document.querySelector('#button').addEventListener('ct.button.off', () => console.log('Button turned off!'));
+````
 
 ---
 
 #### `ct.content.shown`
 Fired at toggle content after it is shown.
 
+````js
+document.querySelector('#content').addEventListener('ct.content.shown', () => console.log('Content shown!'));
+````
+
 ---
 
 #### `ct.content.hidden`
 Fired at toggle content after it is hidden.
+
+````js
+document.querySelector('#content').addEventListener('ct.content.hidden', () => console.log('Content hidden!'));
+````
