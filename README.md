@@ -75,7 +75,9 @@ Targets related content(s) that has `data-toggle-name="name"`.
 ---
 
 #### `data-toggle-class="class-name"`
-CSS *class-name* that will be assigned to active toggle button (default `-active-toggle`). If you are using BEM naming convention, you'll probably need something like this:
+CSS *class-name* that will be assigned to active toggle button (default `-active-toggle`).
+
+For example, when using *BEM* naming convention, your code should look like this:
 ````html
 <div class="Module">
 
