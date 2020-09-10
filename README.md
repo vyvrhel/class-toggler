@@ -48,21 +48,39 @@ Reveals text and make the button green when you click on it:
 ## Options / Data Attributtes
 Behaviour of each toggle can be set via these *data attributes*:
 
-### Toggle Button
+### Toggle Button Options
 
 #### `data-toggle-target="name"`
 Targets related content(s) that has `data-toggle-name="name"`.
 
+---
+
 #### `data-toggle-group="group-name"`
 Each group (togglers with the same *group-name*) can have maximum of one active toggler. Turning one toggler on will turn off the rest of togglers in group.
 
+---
+
 #### `data-toggle-tabs="tabs-name"`
-Each tabs group (togglers with the same *tabs-name*) has always just one active toggler. Turning one toggler on will turn off the rest of togglers in tabs and active toggler can't be turned off by clicking it.
+Each tabs group (togglers with the same *tabs-name*) has always just one active toggler. Turning one toggler on will turn off the rest of togglers in tabs. Active toggler can't be turned off by clicking it.
+
+---
 
 #### `data-toggle-abort="event-1 event-2"`
-Automatically hides toggle for these possible events/values:
+Automatically hides toggle for these possible *events*:
 - *escape* - Hide when escape key is pressed.
 - *clickout* - Hide when clicking outside the toggle content.
 
+---
+
 #### `data-toggle-match="media-query"`
 Binds toggle function on toggler only for macthing *media-query* (e.g. `(min-width: 30em)`), otherwise default action will be fired (opening the `<a>`'s link, submitting `<button>`'s form...).
+
+### Toggle Content Options
+
+#### `data-toggle-name="name"`
+Targets related button(s) that has `data-toggle-target="name"`.
+
+---
+
+#### `data-toggle-focus="css-selector"`
+Element targeted by *css-selector* (e.g. `#form-field`) will be focused when content is shown.
