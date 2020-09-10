@@ -1,11 +1,11 @@
 # Class Toggler
 Simple javascript library for **switching element's CSS class** by clicking another element. Switching is controlled via *data-attributes*. Suitable for creating simply *show/hide*, *more/less*, *tabs*, *dropdown* or *modal* components without writing (repetitive) javascript code, all is done within your HTML template. Component visual behaviour is controlled by your stylesheets.
 
-- [Basic Usage]()
-- [Initialization]()
-- [Options / Data Attributes]()
-- [Events]()
-- [Configuration]()
+- [Basic Usage](#basic-usage)
+- [Initialization](#initialization)
+- [Options / Data Attributes](#options-data-attributes)
+- [Events](#events)
+- [Configuration](#configuration)
 
 ## Basic Usage
 When toggling there are two types of HTML elements:
@@ -94,7 +94,7 @@ Automatically hides toggle for these possible *events*:
 ---
 
 #### `data-toggle-match="media-query"`
-Binds toggle function on toggler only for macthing *media-query* (e.g. `(min-width: 30em)`), otherwise default action will be fired (opening the `<a>`'s link, submitting `<button>`'s form...).
+Binds toggle function on toggler only for mathhing *media-query* (e.g. `(min-width: 30em)`), otherwise default action will be fired (opening the `<a>`'s link, submitting `<button>`'s form...).
 
 ### Toggle Content Options
 
