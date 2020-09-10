@@ -98,9 +98,29 @@ Targets related button(s) that has `data-toggle-target="name"`.
 ---
 
 #### `data-toggle-class="class-name"`
-CSS *class-name* which will be assigned to hidden toggle content (default `-hidden-toggle`). Analogical to 
+CSS *class-name* which will be assigned to hidden toggle content (default `-hidden-toggle`). Analogical to [toggle button option](#data-toggle-classclass-name).
 
---
+---
 
 #### `data-toggle-focus="css-selector"`
 Element targeted by *css-selector* (e.g. `#form-field`) will be focused when content is shown.
+
+## Events
+
+#### `ct.button.on`
+Fired at toggle button after it is turned on.
+
+---
+
+#### `ct.button.off`
+Fired at toggle button after it is turned off.
+
+---
+
+#### `ct.content.shown`
+Fired at toggle content after it is shown.
+
+---
+
+#### `ct.content.hidden`
+Fired at toggle content after it is hidden.
