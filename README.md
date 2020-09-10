@@ -1,11 +1,11 @@
 # Class Toggler
 Simple javascript library for **switching element's CSS class** by clicking another element. Switching is controlled via *data-attributes*. Suitable for creating simply *show/hide*, *more/less*, *tabs*, *dropdown* or *modal* components without writing (repetitive) javascript code, all is done within your HTML template. Component visual behaviour is controlled by your stylesheets.
 
-- [Basic Usage](#basic-usage)
-- [Initialization](#initialization)
-- [Options / Data Attributes](#options--data-attributtes)
-- [Events](#events)
-- [Configuration](#configuration)
+- [Basic Usage](#-basic-usage)
+- [Initialization](#-initialization)
+- [Options / Data Attributes](#-options--data-attributtes)
+- [Events](#-events)
+- [Configuration](#-configuration)
 
 ## 📋 Basic Usage
 When toggling there are two types of HTML elements:
