@@ -55,6 +55,21 @@ Targets related content(s) that has `data-toggle-name="name"`.
 
 ---
 
+#### `data-toggle-class="class-name"`
+CSS *class-name* which will be assigned to active toggle button (default `-active-toggle`). If you are using BEM naming convention, you'll probably need something like this:
+````html
+<div class="Module">
+  <button class="Module__button" data-toggle-target="module-text" data-toggle-class="Module__button--active">
+    Show text!
+  </button>
+  <p class="Module__text Module__text--hidden" data-toggle-name="module-text" data-toggle-class="Module__text--hidden">
+    Text lorem ipsum dolor.
+  </p>
+</div>
+````
+
+---
+
 #### `data-toggle-group="group-name"`
 Each group (togglers with the same *group-name*) can have maximum of one active toggler. Turning one toggler on will turn off the rest of togglers in group.
 
@@ -81,6 +96,11 @@ Binds toggle function on toggler only for macthing *media-query* (e.g. `(min-wid
 Targets related button(s) that has `data-toggle-target="name"`.
 
 ---
+
+#### `data-toggle-class="class-name"`
+CSS *class-name* which will be assigned to hidden toggle content (default `-hidden-toggle`). Analogical to 
+
+--
 
 #### `data-toggle-focus="css-selector"`
 Element targeted by *css-selector* (e.g. `#form-field`) will be focused when content is shown.
