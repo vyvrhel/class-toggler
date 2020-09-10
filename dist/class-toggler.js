@@ -84,8 +84,8 @@
     // (ct.toggler.on / ct.toggler.off / ct.toggle.shown / ct.toggle.hidden)
     doItemEvent(item) {
       item.dispatchEvent(new Event(this.isToggler(item)
-        ? (`${this.opt.eventNamespace}.toggler.${this.isClassed(item) ? 'on' : 'off'}`)
-        : (`${this.opt.eventNamespace}.toggle.${this.isClassed(item) ? 'hidden' : 'shown'}`)));
+        ? (`${this.opt.eventNamespace}.button.${this.isClassed(item) ? 'on' : 'off'}`)
+        : (`${this.opt.eventNamespace}.content.${this.isClassed(item) ? 'hidden' : 'shown'}`)));
     },
 
     // Item is toggler (not toggle)?
@@ -101,7 +101,7 @@
     // Focus specific element when toggle is shown
     initFocus() {
       this.items(this.opt.attrFocus).forEach((item) => {
-        item.addEventListener(`${this.opt.eventNamespace}.toggle.shown`, () => {
+        item.addEventListener(`${this.opt.eventNamespace}.content.shown`, () => {
           item.querySelector(item.getAttribute(this.opt.attrFocus)).focus();
         });
       });
@@ -142,7 +142,7 @@
     // Keep active only one toggler from group
     initGroup(type = this.opt.attrGroup) {
       this.items(type).forEach((toggler) => {
-        toggler.addEventListener(`${this.opt.eventNamespace}.toggler.on`, () => {
+        toggler.addEventListener(`${this.opt.eventNamespace}.button.on`, () => {
           const names = [];
           this.items(type, toggler.getAttribute(type)).forEach((item) => {
             const name = item.getAttribute(this.opt.attrTarget);
