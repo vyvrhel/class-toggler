@@ -59,7 +59,9 @@ Reveals text and make the button green when you click on it:
 
 2. Initialize *Class Toggler* in your JS:
 ```js
-document.addEventListener('DOMContentLoaded', () => classToggler.init());
+document.addEventListener('DOMContentLoaded', () => {
+  classToggler.init();
+});
 ```
 
 ## ⚙ Options / Data Attributtes
@@ -76,12 +78,19 @@ Targets related content(s) that has `data-toggle-name="name"`.
 CSS *class-name* that will be assigned to active toggle button (default `-active-toggle`). If you are using BEM naming convention, you'll probably need something like this:
 ````html
 <div class="Module">
-  <button class="Module__button" data-toggle-target="module-text" data-toggle-class="Module__button--active">
-    Show text!
-  </button>
-  <p class="Module__text Module__text--hidden" data-toggle-name="module-text" data-toggle-class="Module__text--hidden">
-    Text lorem ipsum dolor.
-  </p>
+
+  <button
+    class="Module__button"
+    data-toggle-target="module-text"
+    data-toggle-class="Module__button--active"
+  >Show text!</button>
+
+  <p
+    class="Module__text Module__text--hidden"
+    data-toggle-name="module-text"
+    data-toggle-class="Module__text--hidden"
+  >Text lorem ipsum dolor.</p>
+
 </div>
 ````
 
@@ -128,7 +137,9 @@ Element targeted by *css-selector* (e.g. `#form-field`) will be focused when con
 Fired at toggle button after it is turned on.
 
 ````js
-document.querySelector('#button').addEventListener('ct.button.on', () => console.log('Button turned on!'));
+document.querySelector('#button').addEventListener('ct.button.on', () => {
+  console.log('Button turned on!');
+});
 ````
 
 ---
@@ -137,7 +148,9 @@ document.querySelector('#button').addEventListener('ct.button.on', () => console
 Fired at toggle button after it is turned off.
 
 ````js
-document.querySelector('#button').addEventListener('ct.button.off', () => console.log('Button turned off!'));
+document.querySelector('#button').addEventListener('ct.button.off', () => {
+  console.log('Button turned off!');
+});
 ````
 
 ---
@@ -146,7 +159,9 @@ document.querySelector('#button').addEventListener('ct.button.off', () => consol
 Fired at toggle content after it is shown.
 
 ````js
-document.querySelector('#content').addEventListener('ct.content.shown', () => console.log('Content shown!'));
+document.querySelector('#content').addEventListener('ct.content.shown', () => {
+  console.log('Content shown!');
+});
 ````
 
 ---
@@ -155,7 +170,9 @@ document.querySelector('#content').addEventListener('ct.content.shown', () => co
 Fired at toggle content after it is hidden.
 
 ````js
-document.querySelector('#content').addEventListener('ct.content.hidden', () => console.log('Content hidden!'));
+document.querySelector('#content').addEventListener('ct.content.hidden', () => {
+  console.log('Content hidden!');
+});
 ````
 
 ---
@@ -164,7 +181,9 @@ document.querySelector('#content').addEventListener('ct.content.hidden', () => c
 Fired at document when any toggle button is clicked.
 
 ````js
-document.addEventListener('ct.toggled', () => console.log('Toggle button click!'));
+document.addEventListener('ct.toggled', () => {
+  console.log('Toggle button click!');
+});
 ````
 
 ## 🛠 Configuration
