@@ -53,14 +53,16 @@ Behaviour of each toggle can be set via these *data attributes*:
 #### `data-toggle-target="name"`
 Targets related content(s) that has `data-toggle-name="name"`.
 
-#### `data-toggle-abort="event-1 event-2"`
-Turns on automatic hiding of toggle for these possible events/values:
-- *escape* - Hide when escape key is pressed.
-- *clickout* - Hide when clicking outside the toggle content.
-
 #### `data-toggle-group="group-name"`
 Each group (togglers with the same *group-name*) can have maximum of one active toggler. Turning one toggler on will turn off the rest of togglers in group.
 
 #### `data-toggle-tabs="tabs-name"`
-Each tabs group (togglers with the same *tabs-name*) has always just one active toggler. Turning one toggler on will turn off the rest of togglers in tabs, active toggler can't be turned off by clicking it.
+Each tabs group (togglers with the same *tabs-name*) has always just one active toggler. Turning one toggler on will turn off the rest of togglers in tabs and active toggler can't be turned off by clicking it.
 
+#### `data-toggle-abort="event-1 event-2"`
+Automatically hides toggle for these possible events/values:
+- *escape* - Hide when escape key is pressed.
+- *clickout* - Hide when clicking outside the toggle content.
+
+#### `data-toggle-match="media-query"`
+Binds toggle function on toggler only for macthing *media-query* (e.g. `(min-width: 30em)`), otherwise default action will be fired (opening the `<a>`'s link, submitting `<button>`'s form...).
