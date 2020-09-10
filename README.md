@@ -3,7 +3,7 @@ Simple javascript library for **switching element's CSS class** by clicking anot
 
 - [Basic Usage](#basic-usage)
 - [Initialization](#initialization)
-- [Options / Data Attributes](#options-data-attributes)
+- [Options / Data Attributes](#options--data-attributes)
 - [Events](#events)
 - [Configuration](#configuration)
 
@@ -51,8 +51,19 @@ Reveals text and make the button green when you click on it:
 </button>
 ```
 
+## Initialization
+1. Link *Class Toggler* library in your HTML:
+```html
+<script src="path-to-library/dist/class-toggler.min.js"></script>
+```
+
+2. Initialize *Class Toggler* in your JS:
+```js
+document.addEventListener('DOMContentLoaded', () => classToggler.init());
+```
+
 ## Options / Data Attributtes
-Behaviour of each toggle can be set via these *data attributes*:
+Behaviour of each individual toggle can be set via these *data attributes*:
 
 ### Toggle Button Options
 
@@ -155,3 +166,27 @@ Fired at document when any toggle button is clicked.
 ````js
 document.addEventListener('ct.toggled', () => console.log('Toggle button click!'));
 ````
+
+## Configuration
+*Class Toggler* can be initialized with these options:
+- `classActive` - CSS class for active toggle button (default `-active-toggle`)
+- `classHidden` - CSS class for hidden toggle content (default `-hidden-toggle`)
+- `attrTarget` - HTML data attribute used for toggle targeting (default `data-toggle-target`),
+- `attrName` - HTML attribute used for toggle naming (default `data-toggle-name`),
+- `attrClass` - HTML attribute defining toggled CSS class (default `data-toggle-class`),
+- `attrFocus` - HTML attribute used for focusing toggle content (default `data-toggle-focus`),
+- `attrAbort` - HTML attribute used for toggle aborting (default `data-toggle-abort`),
+- `attrMatch` - HTML attribute used for toggle media query (default `data-toggle-match`),
+- `attrGroup` - HTML attribute used for toggle grouping (default `data-toggle-group`),
+- `attrTabs` - HTML attribute used for toggle grouping in tabs (default `data-toggle-tabs`),
+- `eventNamespace` - Namespace for Class Toggler events (default `ct`),
+
+Example of initialization with custom configuration:
+```js
+document.addEventListener('DOMContentLoaded', () => {
+  classToggler.init({
+    classActive: 'your-active-class',
+    classHidden: 'your-hidden-class',
+  });
+)};
+```
