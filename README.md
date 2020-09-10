@@ -1,6 +1,12 @@
 # Class Toggler
 Simple javascript library for **switching element's CSS class** by clicking another element. Switching is controlled via *data-attributes*. Suitable for creating simply *show/hide*, *more/less*, *tabs*, *dropdown* or *modal* components without writing (repetitive) javascript code, all is done within your HTML template. Component visual behaviour is controlled by your stylesheets.
 
+- [Basic Usage]()
+- [Initialization]()
+- [Options / Data Attributes]()
+- [Events]()
+- [Configuration]()
+
 ## Basic Usage
 When toggling there are two types of HTML elements:
 
@@ -56,7 +62,7 @@ Targets related content(s) that has `data-toggle-name="name"`.
 ---
 
 #### `data-toggle-class="class-name"`
-CSS *class-name* which will be assigned to active toggle button (default `-active-toggle`). If you are using BEM naming convention, you'll probably need something like this:
+CSS *class-name* that will be assigned to active toggle button (default `-active-toggle`). If you are using BEM naming convention, you'll probably need something like this:
 ````html
 <div class="Module">
   <button class="Module__button" data-toggle-target="module-text" data-toggle-class="Module__button--active">
@@ -98,7 +104,7 @@ Targets related button(s) that has `data-toggle-target="name"`.
 ---
 
 #### `data-toggle-class="class-name"`
-CSS *class-name* which will be assigned to hidden toggle content (default `-hidden-toggle`). Analogical to [toggle button option](#data-toggle-classclass-name).
+CSS *class-name* that will be assigned to hidden toggle content (default `-hidden-toggle`). See [toggle button option example](#data-toggle-classclass-name).
 
 ---
 
@@ -139,4 +145,13 @@ Fired at toggle content after it is hidden.
 
 ````js
 document.querySelector('#content').addEventListener('ct.content.hidden', () => console.log('Content hidden!'));
+````
+
+---
+
+#### `ct.toggled`
+Fired at document when any toggle button is clicked.
+
+````js
+document.addEventListener('ct.toggled', () => console.log('Toggle button click!'));
 ````
