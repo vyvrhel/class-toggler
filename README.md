@@ -3,7 +3,7 @@ Simple javascript library for **switching element's CSS class** by clicking anot
 
 - [Basic Usage](#basic-usage)
 - [Initialization](#initialization)
-- [Options / Data Attributes](#options--data-attributes)
+- [Options / Data Attributes](#options--data-attributtes)
 - [Events](#events)
 - [Configuration](#configuration)
 
