@@ -14,6 +14,7 @@ When toggling there are two types of HTML elements:
 - Show/hides related content(s) when clicked.
 - Related content(s) is defined by `data-toggle-target` HTML attribut value.
 - **Active state** is identified by customizable CSS class (default `-active-toggle`).
+
 ### Toggle Content
 - Element to be shown/hidden when related button(s) is clicked.
 - Related button(s) is defined by `data-toggle-name` HTML attribut value.
@@ -209,5 +210,5 @@ document.addEventListener('DOMContentLoaded', () => {
     classActive: 'your-active-class',
     classHidden: 'your-hidden-class',
   });
-)};
+});
 ```
