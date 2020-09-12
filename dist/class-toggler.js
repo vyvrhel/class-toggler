@@ -81,7 +81,7 @@
     },
 
     // Fire event on toggled item
-    // (ct.toggler.on / ct.toggler.off / ct.toggle.shown / ct.toggle.hidden)
+    // (ct.button.on / ct.button.off / ct.content.shown / ct.content.hidden)
     doItemEvent(item) {
       item.dispatchEvent(new Event(this.isToggler(item)
         ? (`${this.opt.eventNamespace}.button.${this.isClassed(item) ? 'on' : 'off'}`)
