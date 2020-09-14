@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Class Toggler Demos</title>
+
+  <!-- Stylesheets -->
+  <style>
+    /* -------- Normalize -------- */
+    :root {
+      --link-color: #4094b3;
+      --layout-gap-hor: 3rem;
+      --box-bg: #fff;
+      --box-radius: .5rem;
+      --box-shadow: 0 0 1.5rem rgba(0, 0, 0, .1);
+      --box-padding: 1.5rem;
+    }
+
+    html {
+      font-size: 100%;
+      display: flex;
+      min-height: 100%;
+    }
+
+    body {
+      color: #333;
+      font-family: Arial, serif;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 72rem;
+      max-width: 100%;
+      min-height: 100%;
+      margin: 0 auto;
+      padding: 1rem;
+      background: #eee;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 0.5em;
+    }
+
+    p,
+    ul {
+      margin: 0 0 1.5em;
+    }
+
+    a {
+      color: var(--link-color);
+    }
+
+    button {
+      color: #fff;
+      font-family: Arial, serif;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-align: center;
+      appearance: none;
+      box-sizing: border-box;
+      overflow: visible;
+      margin: 0;
+      padding: .5rem 1rem;
+      border: 0;
+      border-radius: 3px;
+      outline: 0;
+      background-color: var(--link-color);
+      cursor: pointer;
+    }
+
+    /* ---------- Header --------- */
+    .Header {
+      text-align: center;
+    }
+
+    .Header__title {
+      margin-bottom: .33em;
+    }
+
+    .Header__text {
+      margin-bottom: 0;
+    }
+
+    /* ----------- Demo ---------- */
+    .Demo {
+      margin-top: var(--layout-gap-hor);
+      margin-bottom: var(--layout-gap-hor);
+      padding-top: var(--layout-gap-hor);
+      box-shadow: inset 0 1px 0 #fff;
+      border-top: 1px solid #ccc;
+    }
+
+    .Demo__title {
+      text-align: center;
+    }
+
+    .Demo__links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-left: 0;
+    }
+
+    .Demo__links>*+* {
+      position: relative;
+      margin-left: 2em;
+    }
+
+    .Demo__links>*+*::before {
+      content: '';
+      position: absolute;
+      left: -1em;
+      top: 50%;
+      width: 1px;
+      height: 1em;
+      margin-top: -.5em;
+      box-shadow: 1px 0 0 #fff;
+      background: #ccc;
+    }
+
+    /* ------- More / Less ------- */
+    .More-less {
+      max-width: 30rem;
+      margin: 0 auto;
+      padding: var(--box-padding);
+      border-radius: var(--box-radius);
+      box-shadow: var(--box-shadow);
+      background: var(--box-bg);
+    }
+
+    .More-less>*:last-child {
+      margin-bottom: 0;
+    }
+
+    .More-less__content {
+      max-height: 30rem;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      transition: max-height 0.25s ease-in;
+    }
+
+    /* Content */
+    .More-less__content>*:last-child {
+      margin-bottom: 0;
+    }
+
+    .More-less__content--hidden {
+      max-height: 6rem;
+      transition: max-height 0.25s ease-out;
+    }
+
+    /* Button */
+    .More-less__button-row {
+      text-align: right;
+    }
+
+    .More-less__button:not(.More-less__button--active) .More-less__button-text--less,
+    .More-less__button--active .More-less__button-text--more {
+      display: none;
+    }
+
+    /* ---------- Modal ---------- */
+
+    /* Overlayer */
+    .Modal__overlayer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      background: #000;
+      pointer-events: none;
+      transition: opacity .3s;
+      will-change: opacity;
+    }
+
+    .Modal__overlayer--active {
+      opacity: .8;
+      pointer-events: all;
+    }
+
+    /* Window */
+    .Modal__dialog {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      max-width: 90vw;
+      max-height: 90vw;
+      width: 30rem;
+      display: flex;
+      flex-direction: column;
+      padding: var(--box-padding);
+      border-radius: var(--box-radius);
+      box-shadow: var(--box-shadow);
+      background: var(--box-bg);
+      transform: translate(-50%, -50%);
+      transition: top .3s, transform .3s;
+      will-change: top, transform;
+    }
+
+    .Modal--hidden .Modal__dialog {
+      top: 0;
+      transform: translate(-50%, -120%);
+    }
+
+    /* Title */
+    .Modal__title {
+      padding-right: 2rem;
+    }
+
+    /* Content */
+    .Modal__content {
+      height: 100%;
+      overflow: auto;
+    }
+
+    .Modal__content>*:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Close button */
+    .Modal__close {
+      color: var(--link-color);
+      font-size: 2.5rem;
+      position: absolute;
+      top: .75rem;
+      right: 0;
+      background: transparent;
+    }
+
+    /* Confirm button */
+    .Modal__button-row {
+      text-align: center;
+    }
+
+    /* ------ Modal toggler ------ */
+    .Modal-toggler {
+      text-align: center;
+    }
+  </style>
+
+  <!-- Class Toggler library -->
+  <script defer src="../dist/class-toggler.min.js"></script>
+
+  <!-- Initialize Class Toggler -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      classToggler.init();
+    });
+  </script>
+
+</head>
+
+<body>
+
+
+  <header class="Header">
+    <h1 class="Header__title">Class Toggler Demos</h1>
+    <p class="Header__text">
+      <a href="https://github.com/vyvrhel/class-toggler/">View <strong>Class Toggler</strong> on GitHub</a>
+    </p>
+  </header>
+
+  <div class="Demo">
+    <h2 class="Demo__title">More / Less</h2>
+
+    <ul class="Demo__links">
+      <li class="Demo__links-li">
+        <a href="010-more-less.html" target="_blank" class="Demo__links-link">Open in new window</a>
+      </li>
+      <li class="Demo__links-li">
+        <a href="https://github.com/vyvrhel/class-toggler/blob/master/demos/010-more-less.html" target="_blank" class="Demo__links-link">View source</a>
+      </li>
+    </ul>
+
+    <div class="More-less">
+      <h3 class="More-less__title">Lorem ipsum dolor sit amet</h3>
+
+      <!-- Toggle content -->
+      <div class="More-less__content More-less__content--hidden" data-toggle-name="text" data-toggle-class="More-less__content--hidden">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+        <p>Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+      </div>
+
+      <!-- Toggle button -->
+      <p class="More-less__button-row">
+        <button class="More-less__button" data-toggle-target="text" data-toggle-class="More-less__button--active">
+          <span class="More-less__button-text More-less__button-text--more">Show more &darr;</span>
+          <span class="More-less__button-text More-less__button-text--less">Show less &uarr;</span>
+        </button>
+      </p>
+    </div>
+  </div>
+  <div class="Demo">
+    <h2 class="Demo__title">Dropdown</h2>
+
+    <ul class="Demo__links">
+      <li class="Demo__links-li">
+        <a href="" target="_blank" class="Demo__links-link">Open in new window</a>
+      </li>
+      <li class="Demo__links-li">
+        <a href="" target="_blank" class="Demo__links-link">View source</a>
+      </li>
+    </ul>
+
+  </div>
+  <div class="Demo">
+    <h2 class="Demo__title">Tabs</h2>
+
+    <ul class="Demo__links">
+      <li class="Demo__links-li">
+        <a href="" target="_blank" class="Demo__links-link">Open in new window</a>
+      </li>
+      <li class="Demo__links-li">
+        <a href="" target="_blank" class="Demo__links-link">View source</a>
+      </li>
+    </ul>
+
+  </div>
+  <div class="Demo">
+    <h2 class="Demo__title">Accordion</h2>
+
+    <ul class="Demo__links">
+      <li class="Demo__links-li">
+        <a href="" target="_blank" class="Demo__links-link">Open in new window</a>
+      </li>
+      <li class="Demo__links-li">
+        <a href="" target="_blank" class="Demo__links-link">View source</a>
+      </li>
+    </ul>
+
+  </div>
+  <div class="Demo">
+    <h2 class="Demo__title">Modal</h2>
+
+    <ul class="Demo__links">
+      <li class="Demo__links-li">
+        <a href="050-modal.html" target="_blank" class="Demo__links-link">Open in new window</a>
+      </li>
+      <li class="Demo__links-li">
+        <a href="https://github.com/vyvrhel/class-toggler/blob/master/demos/050-modal.html" target="_blank" class="Demo__links-link">View source</a>
+      </li>
+    </ul>
+
+    <!-- Modal -->
+    <div class="Modal Modal--hidden" data-toggle-name="modal" data-toggle-class="Modal--hidden">
+
+      <!-- Overlayer -->
+      <div class="Modal__overlayer" data-toggle-target="modal" data-toggle-class="Modal__overlayer--active"></div>
+
+      <!-- Window -->
+      <div class="Modal__dialog">
+
+        <!-- Close button -->
+        <button class="Modal__close" data-toggle-target="modal" data-toggle-class="Modal__close--active">&times;</button>
+
+        <!-- Content -->
+        <h3 class="Modal__title">Lorem ipsum dolor sit amet</h3>
+        <div class="Modal__content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+
+          <!-- Confirm button -->
+          <p class="Modal__button-row">
+            <button class="Modal__button" data-toggle-target="modal" data-toggle-class="Modal__button--active">Confirm</button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Modal toggler -->
+    <p class="Modal-toggler">
+      <button class="Modal-toggler__button" data-toggle-target="modal" data-toggle-class="Modal-toggler__button--active" data-toggle-abort="escape">Show modal</button>
+    </p>
+  </div>
+
+
+</body>
+
+</html>

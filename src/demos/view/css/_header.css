@@ -1,0 +1,10 @@
+/* ---------- Header --------- */
+.Header {
+    text-align: center;
+}
+.Header__title {
+    margin-bottom: .33em;
+}
+.Header__text {
+    margin-bottom: 0;
+}

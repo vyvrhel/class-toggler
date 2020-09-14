@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "gulp lint",
     "js": "gulp js",
+    "demos": "gulp demos",
     "build": "gulp build"
   },
   "repository": {
@@ -26,7 +27,9 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-eslint": "^6.0.0",
+    "gulp-html-beautify": "^1.0.1",
     "gulp-rename": "^2.0.0",
+    "gulp-twig": "^1.2.0",
     "gulp-uglify-es": "^2.0.0"
   }
 }

@@ -1,0 +1,33 @@
+{% extends '@box.twig' %}
+
+{% set box = {
+    root: 'Demo',
+    showSkeleton: false,
+}|merge(box ?? {}) %}
+
+{% block box_content %}
+    <div class="{{ r }}">
+        <h2 class="{{ r }}__title">{{ demo.title ?? null }}</h2>
+
+        <ul class="{{ r }}__links">
+            <li class="{{ r }}__links-li">
+                <a
+                    href="{{ demo.link ?? null }}"
+                    target="_blank"
+                    class="{{ r }}__links-link"
+                >Open in new window</a>
+            </li>
+            <li class="{{ r }}__links-li">
+                <a
+                    href="{{ demo.source ?? null }}"
+                    target="_blank"
+                    class="{{ r }}__links-link"
+                >View source</a>
+            </li>
+        </ul>
+
+        {% for inc in demo.includes ?? [] %}
+            {% include inc with {box: {}} %}
+        {% endfor %}
+    </div>
+{% endblock %}

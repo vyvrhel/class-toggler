@@ -1,0 +1,49 @@
+{% extends '@layout.twig' %}
+
+{% set demos = [
+    {
+        title: 'More / Less',
+        link: '010-more-less.html',
+        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/010-more-less.html',
+        includes: [
+            'more-less/_more-less.twig',
+        ],
+    },
+    {
+        title: 'Dropdown',
+    },
+    {
+        title: 'Tabs',
+    },
+    {
+        title: 'Accordion',
+    },
+    {
+        title: 'Modal',
+        link: '050-modal.html',
+        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/050-modal.html',
+        includes: [
+            'modal/_modal.twig',
+            'modal/_modal-toggler.twig',
+        ],
+    },
+] %}
+
+{% block styles %}
+    {% include 'css/_normalize.css' %}
+    {% include 'css/_header.css' %}
+    {% include 'css/_demo.css' %}
+    {% include 'more-less/_more-less.css' %}
+    {% include 'modal/_modal.css' %}
+    {% include 'modal/_modal-toggler.css' %}
+{% endblock %}
+
+{% block content %}
+
+    {% include 'index/_header.twig' %}
+
+    {% for demo in demos %}
+        {% include 'index/_demo.twig' %}
+    {% endfor %}
+
+{% endblock %}

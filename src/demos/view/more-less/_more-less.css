@@ -1,0 +1,36 @@
+/* ------- More / Less ------- */
+.More-less {
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: var(--box-padding);
+    border-radius: var(--box-radius);
+    box-shadow: var(--box-shadow);
+    background: var(--box-bg);
+}
+.More-less > *:last-child {
+    margin-bottom: 0;
+}
+.More-less__content {
+    max-height: 30rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: max-height 0.25s ease-in;
+}
+
+/* Content */
+.More-less__content > *:last-child {
+    margin-bottom: 0;
+}
+.More-less__content--hidden {
+    max-height: 6rem;
+    transition: max-height 0.25s ease-out;
+}
+
+/* Button */
+.More-less__button-row {
+    text-align: right;
+}
+.More-less__button:not(.More-less__button--active) .More-less__button-text--less,
+.More-less__button--active .More-less__button-text--more {
+    display: none;
+}

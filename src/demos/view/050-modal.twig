@@ -1,0 +1,17 @@
+{% extends '@layout.twig' %}
+
+{% block head_title 'Modal | ' %}
+
+{% block styles %}
+    {% include 'css/_normalize.css' %}
+    {% include 'modal/_modal.css' %}
+    {% include 'modal/_modal-toggler.css' %}
+{% endblock %}
+
+{% block content %}
+
+    {% include 'modal/_modal.twig' %}
+
+    {% include 'modal/_modal-toggler.twig' %}
+
+{% endblock %}

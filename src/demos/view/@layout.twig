@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{% block head_title '' %}Class Toggler Demos</title>
+
+    <!-- Stylesheets -->
+    <style>
+        {% block styles %}{% endblock %}
+    </style>
+
+    <!-- Class Toggler library -->
+    <script defer src="../dist/class-toggler.min.js"></script>
+
+    <!-- Initialize Class Toggler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            classToggler.init();
+        });
+    </script>
+
+</head>
+    <body>
+        {% block content %}{% endblock %}
+    </body>
+</html>

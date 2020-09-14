@@ -1,0 +1,34 @@
+{% extends '@box.twig' %}
+
+{% set box = {
+    root: 'More-less',
+    showSkeleton: false,
+}|merge(box ?? {}) %}
+
+{% block box_content %}
+    <div class="{{ r }}">
+        <h3 class="{{ r }}__title">Lorem ipsum dolor sit amet</h3>
+
+        <!-- Toggle content -->
+        <div
+            class="{{ r }}__content {{ r }}__content--hidden"
+            data-toggle-name="text"
+            data-toggle-class="{{ r }}__content--hidden"
+        >
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+            <p>Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+        </div>
+
+        <!-- Toggle button -->
+        <p class="{{ r }}__button-row">
+            <button
+                class="{{ r }}__button"
+                data-toggle-target="text"
+                data-toggle-class="{{ r }}__button--active"
+            >
+                <span class="{{ r }}__button-text {{ r }}__button-text--more">Show more &darr;</span>
+                <span class="{{ r }}__button-text {{ r }}__button-text--less">Show less &uarr;</span>
+            </button>
+        </p>
+    </div>
+{% endblock %}

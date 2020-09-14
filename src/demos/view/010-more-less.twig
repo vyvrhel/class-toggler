@@ -1,0 +1,14 @@
+{% extends '@layout.twig' %}
+
+{% block head_title 'More/Less | ' %}
+
+{% block styles %}
+    {% include 'css/_normalize.css' %}
+    {% include 'more-less/_more-less.css' %}
+{% endblock %}
+
+{% block content %}
+
+    {% include 'more-less/_more-less.twig' %}
+
+{% endblock %}

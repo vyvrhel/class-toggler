@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>More/Less | Class Toggler Demos</title>
+
+  <!-- Stylesheets -->
+  <style>
+    /* -------- Normalize -------- */
+    :root {
+      --link-color: #4094b3;
+      --layout-gap-hor: 3rem;
+      --box-bg: #fff;
+      --box-radius: .5rem;
+      --box-shadow: 0 0 1.5rem rgba(0, 0, 0, .1);
+      --box-padding: 1.5rem;
+    }
+
+    html {
+      font-size: 100%;
+      display: flex;
+      min-height: 100%;
+    }
+
+    body {
+      color: #333;
+      font-family: Arial, serif;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 72rem;
+      max-width: 100%;
+      min-height: 100%;
+      margin: 0 auto;
+      padding: 1rem;
+      background: #eee;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 0.5em;
+    }
+
+    p,
+    ul {
+      margin: 0 0 1.5em;
+    }
+
+    a {
+      color: var(--link-color);
+    }
+
+    button {
+      color: #fff;
+      font-family: Arial, serif;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-align: center;
+      appearance: none;
+      box-sizing: border-box;
+      overflow: visible;
+      margin: 0;
+      padding: .5rem 1rem;
+      border: 0;
+      border-radius: 3px;
+      outline: 0;
+      background-color: var(--link-color);
+      cursor: pointer;
+    }
+
+    /* ------- More / Less ------- */
+    .More-less {
+      max-width: 30rem;
+      margin: 0 auto;
+      padding: var(--box-padding);
+      border-radius: var(--box-radius);
+      box-shadow: var(--box-shadow);
+      background: var(--box-bg);
+    }
+
+    .More-less>*:last-child {
+      margin-bottom: 0;
+    }
+
+    .More-less__content {
+      max-height: 30rem;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      transition: max-height 0.25s ease-in;
+    }
+
+    /* Content */
+    .More-less__content>*:last-child {
+      margin-bottom: 0;
+    }
+
+    .More-less__content--hidden {
+      max-height: 6rem;
+      transition: max-height 0.25s ease-out;
+    }
+
+    /* Button */
+    .More-less__button-row {
+      text-align: right;
+    }
+
+    .More-less__button:not(.More-less__button--active) .More-less__button-text--less,
+    .More-less__button--active .More-less__button-text--more {
+      display: none;
+    }
+  </style>
+
+  <!-- Class Toggler library -->
+  <script defer src="../dist/class-toggler.min.js"></script>
+
+  <!-- Initialize Class Toggler -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      classToggler.init();
+    });
+  </script>
+
+</head>
+
+<body>
+
+
+  <div class="More-less">
+    <h3 class="More-less__title">Lorem ipsum dolor sit amet</h3>
+
+    <!-- Toggle content -->
+    <div class="More-less__content More-less__content--hidden" data-toggle-name="text" data-toggle-class="More-less__content--hidden">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+      <p>Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+    </div>
+
+    <!-- Toggle button -->
+    <p class="More-less__button-row">
+      <button class="More-less__button" data-toggle-target="text" data-toggle-class="More-less__button--active">
+        <span class="More-less__button-text More-less__button-text--more">Show more &darr;</span>
+        <span class="More-less__button-text More-less__button-text--less">Show less &uarr;</span>
+      </button>
+    </p>
+  </div>
+
+
+</body>
+
+</html>

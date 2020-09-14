@@ -1,0 +1,49 @@
+{% extends '@box.twig' %}
+
+{% set box = {
+    root: 'Modal',
+    showSkeleton: false,
+}|merge(box ?? {}) %}
+
+{% block box_content %}
+    <!-- Modal -->
+    <div
+        class="{{ r }} {{ r }}--hidden"
+        data-toggle-name="modal"
+        data-toggle-class="{{ r }}--hidden"
+    >
+
+        <!-- Overlayer -->
+        <div
+            class="{{ r }}__overlayer"
+            data-toggle-target="modal"
+            data-toggle-class="{{ r }}__overlayer--active"
+        ></div>
+
+        <!-- Window -->
+        <div class="{{ r }}__dialog">
+
+            <!-- Close button -->
+            <button
+                class="{{ r }}__close"
+                data-toggle-target="modal"
+                data-toggle-class="{{ r }}__close--active"
+            >&times;</button>
+
+            <!-- Content -->
+            <h3 class="{{ r }}__title">Lorem ipsum dolor sit amet</h3>
+            <div class="{{ r }}__content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+
+                <!-- Confirm button -->
+                <p class="{{ r }}__button-row">
+                    <button
+                        class="{{ r }}__button"
+                        data-toggle-target="modal"
+                        data-toggle-class="{{ r }}__button--active"
+                    >Confirm</button>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

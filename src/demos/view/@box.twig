@@ -1,0 +1,64 @@
+{%- set box = {
+    root: 'Text',
+    classBox: '',
+    classTitle: '',
+    classContent: '',
+    tagBox: 'div',
+    tagTitle: 'h2',
+    tagContent: 'div',
+    attrsBox: {},
+    attrsTitle: {},
+    attrsContent: {},
+    showSkeleton: true,
+    requireContent: true,
+}|merge(box ?? {}) -%}
+
+{# box.root vypisujeme často, proto si jej uložíme i do "zkratky" r #}
+{%- set r = box.root -%}
+
+{%- set box = {
+    title: block('box_title') is defined ? block('box_title') : '',
+    content: block('box_content') is defined ? block('box_content') : '',
+}|merge(box) -%}
+
+{%- block box_outer -%}
+    {%- if (box.content|trim or not box.requireContent) and (box.title|trim or box.content|trim) -%}
+        {%- if box.showSkeleton -%}
+            <{{ box.tagBox }} class="{{ ('Box ' ~ box.root ~ ' ' ~ box.classBox)|trim }}"
+                {%- for attr, val in box.attrsBox %} {{ attr }}="{{ val }}"{% endfor -%}
+            >
+        {%- endif -%}
+
+            {%- block box -%}
+
+                {%- block box_title_outer -%}
+                    {%- if box.title|trim and box.showSkeleton -%}
+                        <{{ box.tagTitle }} class="{{ ('Box__title ' ~ box.root ~ '__title ' ~ box.classTitle)|trim }}"
+                            {%- for attr, val in box.attrsTitle %} {{ attr }}="{{ val }}"{% endfor -%}
+                        >
+                            {{- box.title|raw -}}
+                        </{{ box.tagTitle }}>
+                    {%- endif -%}
+                {%- endblock -%}
+
+                {%- block box_content_outer -%}
+                    {%- if box.content|trim -%}
+                        {%- if box.showSkeleton -%}
+                            <{{ box.tagContent }} class="{{ ('Box__content ' ~ box.root ~ '__content ' ~ box.classContent)|trim }}"
+                                {%- for attr, val in box.attrsContent %} {{ attr }}="{{ val }}"{% endfor -%}
+                            >
+                        {%- endif -%}
+                            {{- box.content|raw -}}
+                        {%- if box.showSkeleton -%}
+                            </{{ box.tagContent }}>
+                        {%- endif -%}
+                    {%- endif -%}
+                {%- endblock -%}
+
+            {%- endblock -%}
+
+        {%- if box.showSkeleton -%}
+            </{{ box.tagBox }}>
+        {%- endif -%}
+    {%- endif -%}
+{%- endblock -%}

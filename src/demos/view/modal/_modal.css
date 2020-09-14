@@ -1,0 +1,71 @@
+/* ---------- Modal ---------- */
+
+/* Overlayer */
+.Modal__overlayer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background: #000;
+    pointer-events: none;
+    transition: opacity .3s;
+    will-change: opacity;
+}
+.Modal__overlayer--active {
+    opacity: .8;
+    pointer-events: all;
+}
+
+/* Window */
+.Modal__dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 90vw;
+    max-height: 90vw;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    padding: var(--box-padding);
+    border-radius: var(--box-radius);
+    box-shadow: var(--box-shadow);
+    background: var(--box-bg);
+    transform: translate(-50%, -50%);
+    transition: top .3s, transform .3s;
+    will-change: top, transform;
+}
+.Modal--hidden .Modal__dialog {
+    top: 0;
+    transform: translate(-50%, -120%);
+}
+
+/* Title */
+.Modal__title {
+    padding-right: 2rem;
+}
+
+/* Content */
+.Modal__content {
+    height: 100%;
+    overflow: auto;
+}
+.Modal__content > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Close button */
+.Modal__close {
+    color: var(--link-color);
+    font-size: 2.5rem;
+    position: absolute;
+    top: .75rem;
+    right: 0;
+    background: transparent;
+}
+
+/* Confirm button */
+.Modal__button-row {
+    text-align: center;
+}

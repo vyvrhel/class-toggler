@@ -1,0 +1,18 @@
+{% extends '@box.twig' %}
+
+{% set box = {
+    root: 'Modal-toggler',
+    showSkeleton: false,
+}|merge(box ?? {}) %}
+
+{% block box_content %}
+    <!-- Modal toggler -->
+    <p class="{{ r }}">
+        <button
+            class="{{ r }}__button"
+            data-toggle-target="modal"
+            data-toggle-class="{{ r }}__button--active"
+            data-toggle-abort="escape"
+        >Show modal</button>
+    </p>
+{% endblock %}
