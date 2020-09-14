@@ -117,7 +117,7 @@ Automatically hides toggle for these possible *events*:
 ---
 
 #### `data-toggle-match="media-query"`
-Binds toggle function on toggler only for mathhing *media-query* (e.g. `(min-width: 30em)`), otherwise default action will be fired (opening the `<a>`'s link, submitting `<button>`'s form...).
+Binds toggle function on toggler only for matching *media-query* (e.g. `(min-width: 30em)`), otherwise default action will be fired (opening the `<a>`'s link, submitting `<button>`'s form...).
 
 ### Toggle Content Options
 
