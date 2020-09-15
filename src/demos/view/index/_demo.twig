@@ -6,7 +6,7 @@
 }|merge(box ?? {}) %}
 
 {% block box_content %}
-    <div class="{{ r }}">
+    <div class="{{ r }}" id="demo-{{ demo.id }}">
         <h2 class="{{ r }}__title">{{ demo.title ?? null }}</h2>
 
         <ul class="{{ r }}__links">
