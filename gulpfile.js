@@ -19,7 +19,8 @@ function js() {
       const path = pathParam;
       path.basename += '.min';
     }))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('docs/js'));
 }
 
 function lintJs() {
