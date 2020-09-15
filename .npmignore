@@ -1,5 +1,5 @@
-/docs
-/src
+docs/
+src/
 .browserslistrc
 .eslintrc
 gulpfile.js
