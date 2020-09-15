@@ -1,5 +1,5 @@
 # Class Toggler
-Simple javascript library for **toggling element's CSS class** by clicking another element. Toggling is controlled via *data-attributes*. Suitable for creating simply *show/hide*, *more/less*, *tabs/accordion*, *dropdown* or *modal* components without writing (repetitive) javascript code, all is done within your HTML template. Component visual behaviour is controlled by your stylesheets.
+Simple javascript library for **toggling element's CSS class** by clicking another element. Toggling is controlled via *data-attributes*. Suitable for creating simply *show/hide*, *more/less*, *tabs*, *accordion*, *dropdown* or *modal* components without writing (repetitive) javascript code, all is done within your HTML template. Component visual behaviour is controlled by your stylesheets.
 
 - [Basic Usage](#-basic-usage)
 - [Initialization](#-initialization)
