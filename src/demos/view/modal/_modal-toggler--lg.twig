@@ -1,0 +1,30 @@
+{% extends '@box.twig' %}
+
+{% set box = {
+    root: 'Modal-toggler',
+    showSkeleton: false,
+}|merge(box ?? {}) %}
+
+{% block box_content %}
+    <!-- Modal toggler - LG -->
+    <p class="{{ r }}">
+        <button
+            class="{{ r }}__button"
+            data-toggle-target="modal-lg"
+            data-toggle-class="{{ r }}__button--active"
+            data-toggle-abort="escape"
+            data-toggle-match="(min-width: 800px)"
+        >Show modal only for screens wider then 799px</button>
+    </p>
+
+    <!-- Modal toggler - SM -->
+    <p class="{{ r }}">
+        <button
+            class="{{ r }}__button"
+            data-toggle-target="modal-lg"
+            data-toggle-class="{{ r }}__button--active"
+            data-toggle-abort="escape"
+            data-toggle-match="(max-width: 799px)"
+        >Show modal only for screens narrower then 800px</button>
+    </p>
+{% endblock %}

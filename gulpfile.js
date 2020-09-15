@@ -33,17 +33,18 @@ function lint(cb) {
 }
 
 function demos() {
-    return gulp.src([
-      'src/demos/view/*.twig',
-      '!src/demos/view/@*.twig',
-    ]).pipe(twig({
-        base: 'src/demos/view/',
-      }))
-      .pipe(htmlbeautify({
-        indent_size: 2,
-        wrap_attributes_indent_size: 2,
-      }))
-      .pipe(gulp.dest('demos'));
+  return gulp.src([
+    'src/demos/view/*.twig',
+    '!src/demos/view/@*.twig',
+  ])
+    .pipe(twig({
+      base: 'src/demos/view/',
+    }))
+    .pipe(htmlbeautify({
+      indent_size: 2,
+      wrap_attributes_indent_size: 2,
+    }))
+    .pipe(gulp.dest('demos'));
 }
 
 exports.js = js;

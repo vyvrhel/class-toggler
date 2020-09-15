@@ -1,0 +1,87 @@
+{% extends '@box.twig' %}
+
+{% set box = {
+    root: 'Accordion',
+    showSkeleton: false,
+}|merge(box ?? {}) %}
+
+{% block box_content %}
+    <ul class="{{ r }}">
+
+        <!-- Accordion #1 -->
+        <li class="{{ r }}__li">
+
+            <!-- Button -->
+            <a
+                class="{{ r }}__button"
+                data-toggle-target="accordion-1"
+                data-toggle-class="{{ r }}__button--active"
+                data-toggle-group="accordion"
+                href="#accordion-1"
+            >Title of the first accordion</a>
+
+            <!-- Content -->
+            <div
+                class="{{ r }}__content {{ r }}__content--hidden"
+                data-toggle-name="accordion-1"
+                data-toggle-class="{{ r }}__content--hidden"
+                id="accordion-1"
+            >
+                <div class="{{ r }}__content-inner">
+                    <p>Content of the first accordion. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+                </div>
+            </div>
+        </li>
+
+        <!-- Accordion #2 -->
+        <li class="{{ r }}__li">
+
+            <!-- Button -->
+            <a
+                class="{{ r }}__button"
+                data-toggle-target="accordion-2"
+                data-toggle-class="{{ r }}__button--active"
+                data-toggle-group="accordion"
+                href="#accordion-2"
+            >Title of the second accordion</a>
+
+            <!-- Content -->
+            <div
+                class="{{ r }}__content {{ r }}__content--hidden"
+                data-toggle-name="accordion-2"
+                data-toggle-class="{{ r }}__content--hidden"
+                id="accordion-2"
+            >
+                <div class="{{ r }}__content-inner">
+                    <p>Content of the second accordion. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+                </div>
+            </div>
+        </li>
+
+        <!-- Accordion #3 -->
+        <li class="{{ r }}__li">
+
+            <!-- Button -->
+            <a
+                class="{{ r }}__button"
+                data-toggle-target="accordion-3"
+                data-toggle-class="{{ r }}__button--active"
+                data-toggle-group="accordion"
+                href="#accordion-3"
+            >Title of the third accordion</a>
+
+            <!-- Content -->
+            <div
+                class="{{ r }}__content {{ r }}__content--hidden"
+                data-toggle-name="accordion-3"
+                data-toggle-class="{{ r }}__content--hidden"
+                id="accordion-3"
+            >
+                <div class="{{ r }}__content-inner">
+                    <p>Content of the third accordion. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+{% endblock %}

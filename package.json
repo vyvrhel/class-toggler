@@ -1,7 +1,7 @@
 {
   "name": "class-toggler",
   "version": "1.0.0",
-  "description": "Script for CSS class toggling",
+  "description": "Javascript library for CSS class toggling",
   "main": "dist/class-toggler.js",
   "scripts": {
     "lint": "gulp lint",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vyvrhel/toggler.git"
+    "url": "git+https://github.com/vyvrhel/class-toggler.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vyvrhel/toggler/issues"
+    "url": "https://github.com/vyvrhel/class-toggler/issues"
   },
-  "homepage": "https://github.com/vyvrhel/toggler#readme",
+  "homepage": "https://github.com/vyvrhel/class-toggler#readme",
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",

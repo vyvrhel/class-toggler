@@ -1,0 +1,34 @@
+{% extends '@box.twig' %}
+
+{% set box = {
+    root: 'Focus',
+    showSkeleton: false,
+}|merge(box ?? {}) %}
+
+{% block box_content %}
+    <div class="{{ r }}">
+
+        <!-- Button -->
+        <a
+            class="{{ r }}__button"
+            data-toggle-target="search"
+            data-toggle-class="{{ r }}__button--active"
+        >Search</a>
+
+        <!-- Content -->
+        <p
+            class="{{ r }}__content {{ r }}__content--hidden"
+            data-toggle-name="search"
+            data-toggle-class="{{ r }}__content--hidden"
+            data-toggle-focus="#search-input"
+        >
+            <input
+                type="text"
+                id="search-input"
+                class="{{ r }}__field"
+                placeholder="Search field">
+            <button class="{{ r }}__submit">Go!</button>
+        </p>
+
+    </div>
+{% endblock %}

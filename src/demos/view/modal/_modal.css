@@ -7,6 +7,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 200;
     opacity: 0;
     background: #000;
     pointer-events: none;
@@ -23,9 +24,10 @@
     position: fixed;
     top: 50%;
     left: 50%;
+    z-index: 210;
+    width: 30rem;
     max-width: 90vw;
     max-height: 90vw;
-    width: 30rem;
     display: flex;
     flex-direction: column;
     padding: var(--box-padding);

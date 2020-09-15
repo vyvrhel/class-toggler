@@ -1,0 +1,99 @@
+{% extends '@box.twig' %}
+
+{% set box = {
+    root: 'Dropdown',
+    showSkeleton: false,
+}|merge(box ?? {}) %}
+
+{% block box_content %}
+    <ul class="{{ r }}">
+
+        <!-- Menu item #1 -->
+        <li class="{{ r }}__li">
+
+            <!-- Button -->
+            <a
+                class="{{ r }}__button"
+                data-toggle-target="dropdown-1"
+                data-toggle-class="{{ r }}__button--active"
+                data-toggle-abort="escape clickout"
+            >Item one</a>
+
+            <!-- Submenu -->
+            <ul
+                class="{{ r }}__content {{ r }}__content--hidden"
+                data-toggle-name="dropdown-1"
+                data-toggle-class="{{ r }}__content--hidden"
+            >
+                <li class="{{ r }}__content-li">
+                    <a class="{{ r }}__content-link">Subitem one</a>
+                </li>
+                <li class="{{ r }}__content-li">
+                    <a class="{{ r }}__content-link">Subitem two</a>
+                </li>
+                <li class="{{ r }}__content-li">
+                    <a class="{{ r }}__content-link">Subitem three</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Menu item #2 -->
+        <li class="{{ r }}__li">
+
+            <!-- Button -->
+            <a
+                class="{{ r }}__button"
+                data-toggle-target="dropdown-2"
+                data-toggle-class="{{ r }}__button--active"
+                data-toggle-abort="escape clickout"
+            >Item two</a>
+
+            <!-- Submenu -->
+            <ul
+                class="{{ r }}__content {{ r }}__content--hidden"
+                data-toggle-name="dropdown-2"
+                data-toggle-class="{{ r }}__content--hidden"
+            >
+                <li class="{{ r }}__content-li">
+                    <a class="{{ r }}__content-link">Subitem one</a>
+                </li>
+                <li class="{{ r }}__content-li">
+                    <a class="{{ r }}__content-link">Subitem two</a>
+                </li>
+                <li class="{{ r }}__content-li">
+                    <a class="{{ r }}__content-link">Subitem three</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Menu item #3 -->
+        <li class="{{ r }}__li">
+
+            <!-- Button -->
+            <a
+                class="{{ r }}__button"
+                data-toggle-target="dropdown-3"
+                data-toggle-class="{{ r }}__button--active"
+                data-toggle-abort="escape clickout"
+            >Item three</a>
+
+            <!-- Submenu -->
+            <ul
+                class="{{ r }}__content {{ r }}__content--hidden"
+                data-toggle-name="dropdown-3"
+                data-toggle-class="{{ r }}__content--hidden"
+            >
+                <li class="{{ r }}__content-li">
+                    <a class="{{ r }}__content-link">Subitem one</a>
+                </li>
+                <li class="{{ r }}__content-li">
+                    <a class="{{ r }}__content-link">Subitem two</a>
+                </li>
+                <li class="{{ r }}__content-li">
+                    <a class="{{ r }}__content-link">Subitem three</a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+{% endblock %}

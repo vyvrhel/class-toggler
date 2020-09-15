@@ -5,18 +5,20 @@
     showSkeleton: false,
 }|merge(box ?? {}) %}
 
+{% set toggleTarget = toggleTarget ?? 'modal' %}
+
 {% block box_content %}
     <!-- Modal -->
     <div
         class="{{ r }} {{ r }}--hidden"
-        data-toggle-name="modal"
+        data-toggle-name="{{ toggleTarget }}"
         data-toggle-class="{{ r }}--hidden"
     >
 
         <!-- Overlayer -->
         <div
             class="{{ r }}__overlayer"
-            data-toggle-target="modal"
+            data-toggle-target="{{ toggleTarget }}"
             data-toggle-class="{{ r }}__overlayer--active"
         ></div>
 
@@ -26,7 +28,7 @@
             <!-- Close button -->
             <button
                 class="{{ r }}__close"
-                data-toggle-target="modal"
+                data-toggle-target="{{ toggleTarget }}"
                 data-toggle-class="{{ r }}__close--active"
             >&times;</button>
 
@@ -39,7 +41,7 @@
                 <p class="{{ r }}__button-row">
                     <button
                         class="{{ r }}__button"
-                        data-toggle-target="modal"
+                        data-toggle-target="{{ toggleTarget }}"
                         data-toggle-class="{{ r }}__button--active"
                     >Confirm</button>
                 </p>

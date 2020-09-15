@@ -11,12 +11,27 @@
     },
     {
         title: 'Dropdown',
+        link: '020-dropdown.html',
+        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/020-dropdown.html',
+        includes: [
+            'dropdown/_dropdown.twig',
+        ],
     },
     {
         title: 'Tabs',
+        link: '030-tabs.html',
+        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/030-tabs.html',
+        includes: [
+            'tabs/_tabs.twig',
+        ],
     },
     {
         title: 'Accordion',
+        link: '040-accordion.html',
+        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/040-accordion.html',
+        includes: [
+            'accordion/_accordion.twig',
+        ],
     },
     {
         title: 'Modal',
@@ -27,6 +42,23 @@
             'modal/_modal-toggler.twig',
         ],
     },
+    {
+        title: 'Focused content',
+        link: '060-focus.html',
+        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/060-focus.html',
+        includes: [
+            'focus/_focus.twig',
+        ],
+    },
+    {
+        title: 'Media query',
+        link: '070-query.html',
+        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/070-query.html',
+        includes: [
+            'modal/_modal--lg.twig',
+            'modal/_modal-toggler--lg.twig',
+        ],
+    },
 ] %}
 
 {% block styles %}
@@ -34,8 +66,12 @@
     {% include 'css/_header.css' %}
     {% include 'css/_demo.css' %}
     {% include 'more-less/_more-less.css' %}
+    {% include 'dropdown/_dropdown.css' %}
+    {% include 'tabs/_tabs.css' %}
+    {% include 'accordion/_accordion.css' %}
     {% include 'modal/_modal.css' %}
     {% include 'modal/_modal-toggler.css' %}
+    {% include 'focus/_focus.css' %}
 {% endblock %}
 
 {% block content %}

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Modal | Class Toggler Demos</title>
+  <title>Media query | Class Toggler Demos</title>
 
   <!-- Stylesheets -->
   <style>
@@ -166,11 +166,6 @@
     .Modal__button-row {
       text-align: center;
     }
-
-    /* ------ Modal toggler ------ */
-    .Modal-toggler {
-      text-align: center;
-    }
   </style>
 
   <!-- Class Toggler library -->
@@ -188,16 +183,16 @@
 <body>
 
   <!-- Modal -->
-  <div class="Modal Modal--hidden" data-toggle-name="modal" data-toggle-class="Modal--hidden">
+  <div class="Modal Modal--hidden" data-toggle-name="modal-lg" data-toggle-class="Modal--hidden">
 
     <!-- Overlayer -->
-    <div class="Modal__overlayer" data-toggle-target="modal" data-toggle-class="Modal__overlayer--active"></div>
+    <div class="Modal__overlayer" data-toggle-target="modal-lg" data-toggle-class="Modal__overlayer--active"></div>
 
     <!-- Window -->
     <div class="Modal__dialog">
 
       <!-- Close button -->
-      <button class="Modal__close" data-toggle-target="modal" data-toggle-class="Modal__close--active">&times;</button>
+      <button class="Modal__close" data-toggle-target="modal-lg" data-toggle-class="Modal__close--active">&times;</button>
 
       <!-- Content -->
       <h3 class="Modal__title">Lorem ipsum dolor sit amet</h3>
@@ -206,15 +201,19 @@
 
         <!-- Confirm button -->
         <p class="Modal__button-row">
-          <button class="Modal__button" data-toggle-target="modal" data-toggle-class="Modal__button--active">Confirm</button>
+          <button class="Modal__button" data-toggle-target="modal-lg" data-toggle-class="Modal__button--active">Confirm</button>
         </p>
       </div>
     </div>
   </div>
-
-  <!-- Modal toggler -->
+  <!-- Modal toggler - LG -->
   <p class="Modal-toggler">
-    <button class="Modal-toggler__button" data-toggle-target="modal" data-toggle-class="Modal-toggler__button--active" data-toggle-abort="escape">Show modal</button>
+    <button class="Modal-toggler__button" data-toggle-target="modal-lg" data-toggle-class="Modal-toggler__button--active" data-toggle-abort="escape" data-toggle-match="(min-width: 800px)">Show modal only for screens wider then 799px</button>
+  </p>
+
+  <!-- Modal toggler - SM -->
+  <p class="Modal-toggler">
+    <button class="Modal-toggler__button" data-toggle-target="modal-lg" data-toggle-class="Modal-toggler__button--active" data-toggle-abort="escape" data-toggle-match="(max-width: 799px)">Show modal only for screens narrower then 800px</button>
   </p>
 
 </body>

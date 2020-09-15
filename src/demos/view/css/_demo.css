@@ -10,10 +10,12 @@
     text-align: center;
 }
 .Demo__links {
+    font-size: .8rem;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: -.5rem 0 2rem;
     padding-left: 0;
 }
 .Demo__links > * + * {

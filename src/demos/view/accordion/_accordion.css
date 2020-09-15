@@ -1,0 +1,62 @@
+/* -------- Accordion -------- */
+.Accordion {
+    list-style: none;
+    max-width: 33rem;
+    margin: 0 auto;
+    padding: 0;
+}
+.Accordion > * + * {
+    margin-top: .25em;
+}
+
+/* Buttons */
+.Accordion__button {
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: .75em 3em .75em 1.5em;
+    border-radius: var(--box-radius);
+    box-shadow: var(--box-shadow);
+    background: var(--box-bg);
+}
+.Accordion__button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    border-left: .9em solid #333;
+    border-top: .4em solid transparent;
+    border-bottom: .4em solid transparent;
+    transform: translateY(-50%);
+    transition: transform .25s;
+}
+.Accordion__button--active::after,
+.Accordion__button:hover::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+/* Contents */
+.Accordion__content {
+    position: relative;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    max-height: 30rem;
+    overflow: hidden;
+    border-radius: 0 0 var(--box-radius) var(--box-radius);
+    transition: max-height .25s ease-in;
+}
+.Accordion__content--hidden {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: max-height 0.25s ease-out;
+}
+.Accordion__content-inner {
+    padding: 0 var(--box-padding) var(--box-padding);
+    box-shadow: var(--box-shadow);
+    background: var(--box-bg);
+}
+.Accordion__content-inner > *:last-child {
+    margin-bottom: 0;
+}

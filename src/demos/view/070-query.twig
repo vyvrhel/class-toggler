@@ -1,0 +1,15 @@
+{% extends '@layout.twig' %}
+
+{% block head_title 'Media query | ' %}
+
+{% block styles %}
+    {% include 'css/_normalize.css' %}
+    {% include 'modal/_modal.css' %}
+{% endblock %}
+
+{% block content %}
+
+    {% include 'modal/_modal--lg.twig' %}
+    {% include 'modal/_modal-toggler--lg.twig' %}
+
+{% endblock %}

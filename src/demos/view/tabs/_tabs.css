@@ -1,0 +1,41 @@
+/* ----------- Tabs ---------- */
+.Tabs {
+    max-width: 33rem;
+    margin: 0 auto;
+}
+
+/* Buttons */
+.Tabs__buttons {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.Tabs__buttons-link {
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+    padding: .75em 1.5em;
+}
+.Tabs__buttons-link--active {
+    color: #333;
+    position: relative;
+    box-shadow: 0 5px 0 #fff;
+    border-radius: 5px 5px 0 0;
+    background: var(--box-bg);
+    cursor: default;
+}
+
+/* Contents */
+.Tabs__content {
+    padding: var(--box-padding);
+    border-radius: var(--box-radius);
+    box-shadow: var(--box-shadow);
+    background: var(--box-bg);
+}
+.Tabs__content > *:last-child {
+    margin-bottom: 0;
+}
+.Tabs__content--hidden {
+    display: none;
+}

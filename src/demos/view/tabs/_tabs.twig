@@ -1,0 +1,69 @@
+{% extends '@box.twig' %}
+
+{% set box = {
+    root: 'Tabs',
+    showSkeleton: false,
+}|merge(box ?? {}) %}
+
+{% block box_content %}
+    <div class="{{ r }}">
+
+        <!-- Tabs buttons -->
+        <ul class="{{ r }}__buttons">
+            <li class="{{ r }}__buttons-li">
+                <a
+                    class="{{ r }}__buttons-link {{ r }}__buttons-link--active"
+                    data-toggle-target="tab-1"
+                    data-toggle-class="{{ r }}__buttons-link--active"
+                    data-toggle-tabs="tabs"
+                    href="#tab-1"
+                >Tab one</a>
+            </li>
+            <li class="{{ r }}__buttons-li">
+                <a
+                    class="{{ r }}__buttons-link"
+                    data-toggle-target="tab-2"
+                    data-toggle-class="{{ r }}__buttons-link--active"
+                    data-toggle-tabs="tabs"
+                    href="#tab-2"
+                >Tab two</a>
+            </li>
+            <li class="{{ r }}__buttons-li">
+                <a
+                    class="{{ r }}__buttons-link"
+                    data-toggle-target="tab-3"
+                    data-toggle-class="{{ r }}__buttons-link--active"
+                    data-toggle-tabs="tabs"
+                    href="#tab-3"
+                >Tab three</a>
+            </li>
+        </ul>
+
+        <!-- Tabs contents -->
+        <div
+            class="{{ r }}__content"
+            data-toggle-name="tab-1"
+            data-toggle-class="{{ r }}__content--hidden"
+            id="tab-1"
+        >
+            <p>Content of the first tab. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+        </div>
+        <div
+            class="{{ r }}__content {{ r }}__content--hidden"
+            data-toggle-name="tab-2"
+            data-toggle-class="{{ r }}__content--hidden"
+            id="tab-2"
+        >
+            <p>Content of the second tab. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui, viverra id suscipit sed, posuere non ante. Curabitur ac tellus non velit dictum aliquet in eu orci.</p>
+        </div>
+        <div
+            class="{{ r }}__content {{ r }}__content--hidden"
+            data-toggle-name="tab-3"
+            data-toggle-class="{{ r }}__content--hidden"
+            id="tab-3"
+        >
+            <p>Content of the third tab.  Curabitur ac tellus non velit dictum aliquet in eu orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada magna nec justo placerat egestas. Integer porttitor odio nibh. In non dolor sed est molestie feugiat at eu risus. Duis orci dui.</p>
+        </div>
+
+    </div>
+{% endblock %}
