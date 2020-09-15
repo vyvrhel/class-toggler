@@ -72,6 +72,8 @@ Behaviour of each individual toggle can be set via these *data attributes*:
 
 ### Toggle Button Options
 
+---
+
 #### `data-toggle-target="name"`
 Targets related content(s) that has `data-toggle-name="name"`.
 
@@ -134,6 +136,8 @@ Binds toggle function on toggler only for matching *media-query* (e.g. `(min-wid
 (See [Media query demo](https://vyvrhel.github.io/class-toggler/#demo-media-query))
 
 ### Toggle Content Options
+
+---
 
 #### `data-toggle-name="name"`
 Targets related button(s) that has `data-toggle-target="name"`.
