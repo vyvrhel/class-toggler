@@ -1,11 +1,12 @@
 # Class Toggler
-Simple javascript library for **toggling element's CSS class** by clicking another element(s). Toggling is controlled **via data-attributes**. Suitable for creating simply *show/hide*, *[more/less](https://vyvrhel.github.io/class-toggler/#demo-more-less)*, *tabs*, *accordion*, *dropdown* or *modal* components without writing (repetitive) javascript code, all is done within your HTML template. Component visual behaviour is controlled by your stylesheets.
+Simple javascript library for **toggling element's CSS class** by clicking another element(s). Toggling is controlled **via data-attributes**. Suitable for creating simply *[show/hide](https://vyvrhel.github.io/class-toggler/)*, *[more/less](https://vyvrhel.github.io/class-toggler/#demo-more-less)*, *[tabs](https://vyvrhel.github.io/class-toggler/#demo-tabs)*, *[accordion](https://vyvrhel.github.io/class-toggler/#accordion)*, *[dropdown](https://vyvrhel.github.io/class-toggler/#demo-dropdown)* or *[modal](https://vyvrhel.github.io/class-toggler/#demo-modal)* components without writing (repetitive) javascript code, all is done within your HTML template. Component visual behaviour is controlled by your stylesheets.
 
 - [Basic Usage](#-basic-usage)
 - [Initialization](#-initialization)
 - [Options / Data Attributes](#-options--data-attributtes)
 - [Events](#-events)
 - [Configuration](#-configuration)
+- [Demos](https://vyvrhel.github.io/class-toggler/)
 
 ## 📋 Basic Usage
 When toggling there are two types of HTML elements:
@@ -51,6 +52,7 @@ Reveals text and make the button green when you click on it:
   Toggle text!
 </button>
 ```
+(See [live demos](https://vyvrhel.github.io/class-toggler/))
 
 ## 🚀 Initialization
 1. Link *Class Toggler* library in your HTML:
@@ -72,6 +74,8 @@ Behaviour of each individual toggle can be set via these *data attributes*:
 
 #### `data-toggle-target="name"`
 Targets related content(s) that has `data-toggle-name="name"`.
+
+(See [More/Less demo](https://vyvrhel.github.io/class-toggler/#demo-more-less))
 
 ---
 
@@ -97,15 +101,21 @@ For example, when using *BEM* naming convention, your code should look like this
 </div>
 ````
 
+(See [More/Less demo](https://vyvrhel.github.io/class-toggler/#demo-more-less))
+
 ---
 
 #### `data-toggle-group="group-name"`
 Each group (togglers with the same *group-name*) can have maximum of one active toggler. Turning one toggler on will turn off the rest of togglers in group.
 
+(See [Accordion demo](https://vyvrhel.github.io/class-toggler/#demo-accordion))
+
 ---
 
 #### `data-toggle-tabs="tabs-name"`
 Each tabs group (togglers with the same *tabs-name*) has always just one active toggler. Turning one toggler on will turn off the rest of togglers in tabs. Active toggler can't be turned off by clicking it.
+
+(See [Tabs demo](https://vyvrhel.github.io/class-toggler/#demo-tabs))
 
 ---
 
@@ -114,25 +124,35 @@ Automatically hides toggle for these possible *events*:
 - *escape* - Hide when escape key is pressed.
 - *clickout* - Hide when clicking outside the toggle content.
 
+(See [Modal demo](https://vyvrhel.github.io/class-toggler/#demo-modal))
+
 ---
 
 #### `data-toggle-match="media-query"`
 Binds toggle function on toggler only for matching *media-query* (e.g. `(min-width: 30em)`), otherwise default action will be fired (opening the `<a>`'s link, submitting `<button>`'s form...).
+
+(See [Media query demo](https://vyvrhel.github.io/class-toggler/#demo-media-query))
 
 ### Toggle Content Options
 
 #### `data-toggle-name="name"`
 Targets related button(s) that has `data-toggle-target="name"`.
 
+(See [More/Less demo](https://vyvrhel.github.io/class-toggler/#demo-more-less))
+
 ---
 
 #### `data-toggle-class="class-name"`
 CSS *class-name* that will be assigned to hidden toggle content (default `-hidden-toggle`). See [toggle button option example](#data-toggle-classclass-name).
 
+(See [More/Less demo](https://vyvrhel.github.io/class-toggler/#demo-more-less))
+
 ---
 
 #### `data-toggle-focus="css-selector"`
 Element targeted by *css-selector* (e.g. `#form-field`) will be focused when content is shown.
+
+(See [Focused content demo](https://vyvrhel.github.io/class-toggler/#demo-focus))
 
 ## 👂 Events
 
