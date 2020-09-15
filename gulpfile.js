@@ -44,7 +44,7 @@ function demos() {
       indent_size: 2,
       wrap_attributes_indent_size: 2,
     }))
-    .pipe(gulp.dest('demos'));
+    .pipe(gulp.dest('docs'));
 }
 
 exports.js = js;

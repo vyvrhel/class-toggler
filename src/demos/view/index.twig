@@ -1,10 +1,11 @@
 {% extends '@layout.twig' %}
 
+{% set demosDir = 'https://github.com/vyvrhel/class-toggler/blob/master/docs/' %}
 {% set demos = [
     {
         title: 'More / Less',
         link: '010-more-less.html',
-        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/010-more-less.html',
+        source: demosDir ~ '010-more-less.html',
         includes: [
             'more-less/_more-less.twig',
         ],
@@ -12,7 +13,7 @@
     {
         title: 'Dropdown',
         link: '020-dropdown.html',
-        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/020-dropdown.html',
+        source: demosDir ~ '020-dropdown.html',
         includes: [
             'dropdown/_dropdown.twig',
         ],
@@ -20,7 +21,7 @@
     {
         title: 'Tabs',
         link: '030-tabs.html',
-        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/030-tabs.html',
+        source: demosDir ~ '030-tabs.html',
         includes: [
             'tabs/_tabs.twig',
         ],
@@ -28,7 +29,7 @@
     {
         title: 'Accordion',
         link: '040-accordion.html',
-        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/040-accordion.html',
+        source: demosDir ~ '040-accordion.html',
         includes: [
             'accordion/_accordion.twig',
         ],
@@ -36,7 +37,7 @@
     {
         title: 'Modal',
         link: '050-modal.html',
-        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/050-modal.html',
+        source: demosDir ~ '050-modal.html',
         includes: [
             'modal/_modal.twig',
             'modal/_modal-toggler.twig',
@@ -45,7 +46,7 @@
     {
         title: 'Focused content',
         link: '060-focus.html',
-        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/060-focus.html',
+        source: demosDir ~ '060-focus.html',
         includes: [
             'focus/_focus.twig',
         ],
@@ -53,7 +54,7 @@
     {
         title: 'Media query',
         link: '070-query.html',
-        source: 'https://github.com/vyvrhel/class-toggler/blob/master/demos/070-query.html',
+        source: demosDir ~ '070-query.html',
         includes: [
             'modal/_modal--lg.twig',
             'modal/_modal-toggler--lg.twig',
