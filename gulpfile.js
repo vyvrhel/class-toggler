@@ -4,7 +4,7 @@ const uglify = require('gulp-uglify-es').default;
 const rename = require('gulp-rename');
 const babel = require('gulp-babel');
 const twig = require('gulp-twig');
-const htmlbeautify = require('gulp-html-beautify');
+const prettier = require('gulp-prettier');
 
 function js() {
   return gulp.src('src/js/**/*.js')
@@ -41,10 +41,7 @@ function demos() {
     .pipe(twig({
       base: 'src/demos/view/',
     }))
-    .pipe(htmlbeautify({
-      indent_size: 2,
-      wrap_attributes_indent_size: 2,
-    }))
+    .pipe(prettier())
     .pipe(gulp.dest('docs'));
 }
 
