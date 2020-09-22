@@ -1,6 +1,6 @@
 {
   "name": "@vyvrhel/class-toggler",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Javascript library for CSS class toggling",
   "main": "dist/class-toggler.js",
   "scripts": {
