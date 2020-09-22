@@ -67,6 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
+or if using ES6 modules:
+
+```js
+import classToggler from 'path-to-library/dist/class-toggler.esm.min.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  classToggler.init();
+});
+```
+
 ## ⚙ Options / Data Attributtes
 Behaviour of each individual toggle can be set via these *data attributes*:
 
