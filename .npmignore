@@ -3,3 +3,5 @@ src/
 .browserslistrc
 .eslintrc
 gulpfile.js
+*.sublime-project
+*.sublime-workspace
