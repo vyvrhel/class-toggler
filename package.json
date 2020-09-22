@@ -30,7 +30,8 @@
     "gulp-prettier": "^3.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-twig": "^1.2.0",
-    "gulp-uglify-es": "^2.0.0"
+    "gulp-uglify-es": "^2.0.0",
+    "gulp-wrap": "^0.15.0"
   },
   "directories": {
     "doc": "docs"
